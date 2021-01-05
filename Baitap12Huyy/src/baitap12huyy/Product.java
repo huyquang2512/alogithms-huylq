@@ -60,15 +60,32 @@ public class Product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
- int i,j;
-    public List<Product> insertion(ArrayList<Product> productlist) 
-      {
-          
-      }
-    public void print(ArrayList<Product> product){
-        for(Product temp : product){
-         System.out.print(temp.price + "    ");
-  }
-    }
+    public List<Product> sortName(List<Product> productList)
+        {
+            String name;
+            int length;
+            for (int i = 1; i < productList.size(); i++)
+            {
+                name = productList.get(i).name;
+                length = i;
+                while (length > 0 && productList.get(length - 1).name.length() < name.length())
+                {
+                    productList.get(length).name = productList.get(length - 1).name;
+                    length--;
+                }
+                if (length != i)
+                {
+                    productList.get(length).name = name;
+                }
+            }
+            return productList;
+        }
+        public void find(List<Product> productList)
+        {
+            for (int i = 0; i < productList.size(); i++)
+            {
+                System.out.println(" " + productList.get(i).name);
+            }
+        }
 
 }
