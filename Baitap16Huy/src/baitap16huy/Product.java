@@ -3,28 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baitap1huy;
+package baitap16huy;
 
+import com.sun.jdi.connect.spi.Connection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author Ad
  */
-public class product {
-    String name;
-    int price,quality, categoryID;
+public class Product {
 
-    public product(String name, int price, int quality, int categoryID) {
+    String name;
+    int price, quality, categoryID;
+
+    public Product(String name, int price, int quality, int categoryID) {
         this.name = name;
         this.price = price;
         this.quality = quality;
         this.categoryID = categoryID;
     }
 
-    product() {
-       
+    Product() {
+
     }
 
     public String getName() {
@@ -58,20 +61,22 @@ public class product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
-    
-public List<product> findProductByName(List<product> listProducts, String name){
-     List<product> list = new ArrayList<>();
-     
-        for (product products : listProducts) {
-            if (products.name == name) {
-               list.add(products);
-            } 
+//       int min = Float.SIZE;
+
+    public Product maxByPrice(List<Product> productlist) {
+        Product min = productlist.get(0);
+        for (int i = 0; i < productlist.size(); i++) {
+            if (productlist.get(i).price > min.price) {
+                min = productlist.get(i);
+            }
         }
-        return list;
-    } 
-    public void print(List<product> products){
-          for (product temp : products) {
-               System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality+ "  CategoryID : " + temp.categoryID ); 
-        }
+        return min;
     }
+
+    public void print(Product productlist) {
+
+        System.out.println("name  : " + productlist.name + "  Price  : " + productlist.price + "  Quality  : " + productlist.quality + "   CategoryID  : " + productlist.categoryID);
+
+    }
+
 }

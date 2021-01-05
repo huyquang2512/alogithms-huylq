@@ -5,6 +5,7 @@
  */
 package baitap2huy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -59,18 +60,21 @@ public class product {
         this.categoryID = categoryID;
     }
     
-    public List<product> findProductByCategoryID(List<product> product, int categoryID){
-        Scanner c = new Scanner(System.in);
-        System.out.print("Nhập CategoryID : " );
-        int category = c.nextInt();
-        for (product a : product) {
-            
-            if (category == a.categoryID) {
-                System.out.println("Name : " + a.name + "  Price : " + a.price + "  Quality : " + a.quality+ "  CategoryID : " + a.categoryID );
+    public List<product> findProductByCategoryID(List<product> listProducts, int categoryID){
+     List<product> list = new ArrayList<>();
+        for (product products : listProducts) {
+            if (products.categoryID == categoryID) {
+               list.add(products);
 
             } 
         }
         
-        return product;
+        return list;
     } 
+    public void print(List<product> products){
+       
+          for (product temp : products) {
+               System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality+ "  CategoryID : " + temp.categoryID ); 
+        }
+    }
 }

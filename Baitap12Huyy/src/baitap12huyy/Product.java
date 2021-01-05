@@ -3,28 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baitap1huy;
+package baitap12huyy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author Ad
  */
-public class product {
-    String name;
-    int price,quality, categoryID;
+public class Product {
 
-    public product(String name, int price, int quality, int categoryID) {
+    String name;
+    int price, quality, categoryID;
+
+    public Product(String name, int price, int quality, int categoryID) {
         this.name = name;
         this.price = price;
         this.quality = quality;
         this.categoryID = categoryID;
     }
 
-    product() {
-       
+    Product() {
+
     }
 
     public String getName() {
@@ -58,20 +60,15 @@ public class product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
-    
-public List<product> findProductByName(List<product> listProducts, String name){
-     List<product> list = new ArrayList<>();
-     
-        for (product products : listProducts) {
-            if (products.name == name) {
-               list.add(products);
-            } 
-        }
-        return list;
-    } 
-    public void print(List<product> products){
-          for (product temp : products) {
-               System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality+ "  CategoryID : " + temp.categoryID ); 
-        }
+ int i,j;
+    public List<Product> insertion(ArrayList<Product> productlist) 
+      {
+          
+      }
+    public void print(ArrayList<Product> product){
+        for(Product temp : product){
+         System.out.print(temp.price + "    ");
+  }
     }
+
 }

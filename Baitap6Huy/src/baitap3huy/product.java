@@ -5,6 +5,7 @@
  */
 package baitap3huy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ import java.util.Scanner;
 public class product {
     String name;
     int price,quality, categoryID;
-
+   Scanner c = new Scanner(System.in);
     public product(String name, int price, int quality, int categoryID) {
         this.name = name;
         this.price = price;
@@ -59,16 +60,18 @@ public class product {
         this.categoryID = categoryID;
     }
     
-    public List<product> findProductByPrice(List<product> product, int price){
-        Scanner c = new Scanner(System.in);
-        System.out.print("Nhập Giá : " );
-        int pice = c.nextInt();
-        for (product a : product) {
-            if (pice == a.price) {
-             
-                System.out.println("Name : " + a.name + "  Price : " + a.price + "  Quality : " + a.quality+ "  CategoryID : " + a.categoryID );
+    public List<product> findProductByPrice(List<product> listproduct, int price){
+        List<product> z = new ArrayList<>();
+        for (product a : listproduct) {
+            if ( a.price <= price) {
+             z.add(a);
             } 
         }
-        return product;
+        return z;
     } 
+    public void print(List<product> products){
+        for (product temp : products) {
+             System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality+ "  CategoryID : " + temp.categoryID ); 
+        }
 }
+     }

@@ -6,16 +6,14 @@
 package baitap3huy;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author Ad
  */
-public class Baitap3Huy {
+public class Baitap3Huy extends Exception{
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
          ArrayList<product> b = new ArrayList<product>();
         b.add(new product("CPU", 750, 10, 1));
@@ -28,7 +26,10 @@ public class Baitap3Huy {
         b.add(new product("MONITOR", 120, 28, 2));
         b.add(new product("CASE", 120, 28, 5));
         product pr = new product();
-        pr.findProductByPrice(b, 1);
+        Scanner c = new Scanner(System.in);
+        System.out.print("Nhap so tien : ");
+        int d = c.nextInt();
+        pr.print(pr.findProductByPrice(b, d));
     }
     
 }
