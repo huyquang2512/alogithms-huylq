@@ -64,13 +64,13 @@ public class Product {
 //       int min = Float.SIZE;
 
     public Product maxByPrice(List<Product> productlist) {
-        Product min = productlist.get(0);
+        Product max = productlist.get(0);
         for (int i = 0; i < productlist.size(); i++) {
-            if (productlist.get(i).price > min.price) {
-                min = productlist.get(i);
+            if (productlist.get(i).price > max.price) {
+                max = productlist.get(i);
             }
         }
-        return min;
+        return max;
     }
 
     public void print(Product productlist) {
