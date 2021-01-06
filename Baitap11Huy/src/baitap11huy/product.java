@@ -61,31 +61,38 @@ public class Product {
         this.categoryID = categoryID;
     }
 
-    public void sortByPrice(ArrayList<Product> productlist) {
+    public void sortByPrice(ArrayList<Product> listProduct) {
         Product temp;
         Product temp2;
         int i, j;
         boolean swapped = false;
-        for (i = 0; i < productlist.size() - 1; i++) {
+
+        for (i = 0; i < listProduct.size() - 1; i++) 
+        {
             swapped = false;
-            for (j = 0; j < productlist.size() - 1 - i; j++) {
-                if (productlist.get(j).price > productlist.get(j + 1).price) {
-                    temp = productlist.get(j);
-                    temp2 = productlist.get(j + 1);
-                    productlist.set(j, temp2);
-                    productlist.set(j + 1, temp);
+            for (j = 0; j < listProduct.size() - 1 - i; j++) 
+            {
+                if (listProduct.get(j).price > listProduct.get(j + 1).price)
+                {
+                    temp = listProduct.get(j);
+                    temp2 = listProduct.get(j + 1);
+                    listProduct.set(j, temp2);
+                    listProduct.set(j + 1, temp);
                     swapped = true;
                 }
             }
+
             if (!swapped) {
                 break;
             }
         }
     }
-    public void print(ArrayList<Product> product){
-        for(Product temp : product){
-         System.out.print(temp.price + "    ");
-  }
-    }
 
+    public void print(ArrayList<Product> product) 
+    {
+        for (Product temp : product) 
+        {
+            System.out.print(temp.price + "    ");
+        }
+    }
 }

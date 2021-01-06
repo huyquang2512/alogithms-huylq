@@ -62,9 +62,9 @@ public class Product {
         this.categoryID = categoryID;
     }
 
-
     public Product minByPrice(List<Product> productlist) {
         Product min = productlist.get(0);
+        
         for (int i = 0; i < productlist.size(); i++) {
             if (productlist.get(i).price < min.price) {
                 min = productlist.get(i);
@@ -74,9 +74,6 @@ public class Product {
     }
 
     public void print(Product productlist) {
-
         System.out.println("name  : " + productlist.name + "  Price  : " + productlist.price + "  Quality  : " + productlist.quality + "   CategoryID  : " + productlist.categoryID);
-
     }
-
 }

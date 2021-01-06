@@ -14,9 +14,11 @@ import java.util.Scanner;
  * @author Ad
  */
 public class product {
+
     String name;
-    int price,quality, categoryID;
-   Scanner c = new Scanner(System.in);
+    int price, quality, categoryID;
+    Scanner c = new Scanner(System.in);
+
     public product(String name, int price, int quality, int categoryID) {
         this.name = name;
         this.price = price;
@@ -25,7 +27,7 @@ public class product {
     }
 
     product() {
-       
+
     }
 
     public String getName() {
@@ -59,19 +61,20 @@ public class product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
-    
-    public List<product> findProductByPrice(List<product> listproduct, int price){
-        List<product> z = new ArrayList<>();
-        for (product a : listproduct) {
-            if ( a.price <= price) {
-             z.add(a);
-            } 
+
+    public List<product> findProductByPrice(List<product> listproduct, int price) {
+        List<product> list = new ArrayList<>();
+        for (product products : listproduct) {
+            if (products.price <= price) {
+                list.add(products);
+            }
         }
-        return z;
-    } 
-    public void print(List<product> products){
+        return list;
+    }
+
+    public void print(List<product> products) {
         for (product temp : products) {
-             System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality+ "  CategoryID : " + temp.categoryID ); 
+            System.out.println("Name : " + temp.name + "  Price : " + temp.price + "  Quality : " + temp.quality + "  CategoryID : " + temp.categoryID);
         }
+    }
 }
-     }

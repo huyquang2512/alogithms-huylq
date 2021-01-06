@@ -60,26 +60,31 @@ public class Product {
     public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
+    
     public List<Product> sortName(List<Product> productList)
         {
-            String name;
-            int length;
+            String nameProduct;
+            int holePosition;
+            
             for (int i = 1; i < productList.size(); i++)
             {
-                name = productList.get(i).name;
-                length = i;
-                while (length > 0 && productList.get(length - 1).name.length() < name.length())
+                nameProduct = productList.get(i).name;
+                holePosition = i;
+                
+                while (holePosition > 0 && productList.get(holePosition - 1).name.length() < nameProduct.length())
                 {
-                    productList.get(length).name = productList.get(length - 1).name;
-                    length--;
+                    productList.get(holePosition).name = productList.get(holePosition - 1).name;
+                    holePosition--;
                 }
-                if (length != i)
+                
+                if (holePosition != i)
                 {
-                    productList.get(length).name = name;
+                    productList.get(holePosition).name = nameProduct;
                 }
             }
             return productList;
         }
+    
         public void find(List<Product> productList)
         {
             for (int i = 0; i < productList.size(); i++)
@@ -87,5 +92,4 @@ public class Product {
                 System.out.println(" " + productList.get(i).name);
             }
         }
-
 }
