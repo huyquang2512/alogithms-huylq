@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public class Baitap21Huy {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner a = new Scanner(System.in);
         System.out.println("Salary  :");
         int salary = a.nextInt();
@@ -23,9 +24,11 @@ public class Baitap21Huy {
 
     }
 
-    public static float caSalary(int Salary, int n) {
+    public static float caSalary(int Salary, int n) 
+    {
         float luong = Salary;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++)
+        {
             luong = luong + (luong/10);
         }
         return luong;

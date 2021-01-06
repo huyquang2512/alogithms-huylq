@@ -61,12 +61,12 @@ public class Product {
         this.categoryID = categoryID;
     }
 
-    public void sortByPrice(ArrayList<Product> listProduct) {
+    public void sortByPrice(ArrayList<Product> listProduct) 
+    {
         Product temp;
         Product temp2;
         int i, j;
         boolean swapped = false;
-
         for (i = 0; i < listProduct.size() - 1; i++) 
         {
             swapped = false;
@@ -81,7 +81,6 @@ public class Product {
                     swapped = true;
                 }
             }
-
             if (!swapped) {
                 break;
             }

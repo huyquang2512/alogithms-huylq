@@ -62,7 +62,8 @@ public class Product {
         this.categoryID = categoryID;
     }
 
-    public Product maxByPrice(List<Product> productlist) {
+    public Product maxByPrice(List<Product> productlist) 
+    {
         Product max = productlist.get(0);
         for (int i = 0; i < productlist.size(); i++) 
         {
@@ -74,7 +75,8 @@ public class Product {
         return max;
     }
 
-    public void print(Product productlist) {
+    public void print(Product productlist) 
+    {
         System.out.println("name  : " + productlist.name + "  Price  : " + productlist.price + "  Quality  : " + productlist.quality + "   CategoryID  : " + productlist.categoryID);
     }
 }

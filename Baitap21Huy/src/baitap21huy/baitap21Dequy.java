@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public class baitap21Dequy {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner a = new Scanner(System.in);
         System.out.println("Salary  :  ");
         int salary = a.nextInt();
@@ -23,8 +24,10 @@ public class baitap21Dequy {
 
     }
 
-    public static float caSalary(int Salary, int year) {
-        switch (year) {
+    public static float caSalary(int Salary, int year) 
+    {
+        switch (year) 
+        {
             case 0:
                 return 0;
             case 1:
