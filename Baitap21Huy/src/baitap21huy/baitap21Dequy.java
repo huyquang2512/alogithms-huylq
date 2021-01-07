@@ -33,7 +33,7 @@ public class baitap21Dequy {
             case 1:
                 return Salary;
             default:
-                return Salary+(caSalary(Salary, year-1)/10);
+                return caSalary(Salary, year-1)+(caSalary(Salary, year-1)/10);
         }
     }
 }
